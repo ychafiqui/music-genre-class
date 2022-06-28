@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+#file_upload {
+    cursor: pointer;
+}
+#graphs_div {
+    width: 100%;
+    height: calc(100vh - 180px);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;    
+}
+#audio_player {
+    width: calc(100% - 20px);
+    margin: 10px;
+}
+
+.loading {
+    position: absolute;
+    top: 58vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background: white;
+    width: 100vw;
+    /* height: calc(100vh - 180px); */
+    padding: calc(50vh - 120px) 0;
+}
