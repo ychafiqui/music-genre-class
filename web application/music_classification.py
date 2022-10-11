@@ -22,7 +22,7 @@ app.layout = html.Div(
         dcc.Upload(
             id="file_upload",
             children=html.Div(
-                ["Drag and drop or click to select a .wav music file to upload."]
+                ["Drag and drop or click to select .mp3 or .wav music file to predict genre."]
             ),
             style={
                 "width": "calc(100% - 22px)",

@@ -4,6 +4,9 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder
 import librosa
 import os
 import base64
+import audio2numpy as a2n
+
+os.environ["PATH"] += os.pathsep + 'C:/Program Files/ffmpeg/bin' # to be removed in production
 
 columns = ['chroma_stft_mean', 'chroma_stft_var', 'rms_mean', 'rms_var', 'spectral_centroid_mean', 'spectral_centroid_var',
            'spectral_bandwidth_mean', 'spectral_bandwidth_var', 'rolloff_mean', 'rolloff_var', 'zero_crossing_rate_mean', 
@@ -42,8 +45,12 @@ def save_file(name, content):
     with open(os.path.join("audio_files", name), "wb") as fp:
         fp.write(base64.decodebytes(data))
 
-def extract_features_audio_file(file, offset=0, duration=30):
-    audio_data, sr = librosa.load(file, offset=offset, duration=duration)
+def extract_features_audio_file(file, offset=0, duration=60):
+    if file.endswith(".mp3"):
+        x, sr = a2n.audio_from_file(file, offset=offset, duration=duration)
+        audio_data = x.T[0]
+    elif file.endswith(".wav"):
+        audio_data, sr = librosa.load(file, offset=offset, duration=duration)
     test_data = []
     
     #chroma
