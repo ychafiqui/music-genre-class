@@ -8,4 +8,5 @@ The aim of the project is to avoid having to manually classify music into catego
 In the end, we created a Web-app to automatically classify music by genre using the created models.
 
 ## Demo
+![](https://github.com/ychafiqui/music-genre-class/blob/main/demo.gif)
 We are currently still working on a way to deploy our web application to the cloud, we are facing some problems regarding the size of the project since most cloud services do not provide enough storage space for free users...
