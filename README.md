@@ -11,4 +11,3 @@ In the end, we created a Web-app to automatically classify music by genre using 
 ![](https://github.com/ychafiqui/music-genre-class/blob/main/demo.gif)
 
 # Web app link
-https://genremusic.pythonanywhere.com/
