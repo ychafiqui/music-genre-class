@@ -1,1 +1,0 @@
-web: gunicorn music_classification:server
